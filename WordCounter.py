@@ -1,6 +1,7 @@
 import argparse
 
 parser = argparse.ArgumentParser(description='Program for parsing files similar to linux word counter')
+
 parser.add_argument('file', type=argparse.FileType('r'), help='Enter filename including its extension, that you would '
                                                               'like to use this program on(required argument)')
 
@@ -27,9 +28,12 @@ def count(cl, cw, cc, file):
         if cc:
             for singlechar in line:
                 charcount += singlechar.isalpha()
-    print('Line count: ', linecount)
-    print('Word count: ', wordcount)
-    print('Char count: ', charcount)
+    if linecount:
+        print('Line count: ', linecount)
+    if wordcount:
+        print('Word count: ', wordcount)
+    if charcount:
+        print('Char count: ', charcount)
 
 
 args = parser.parse_args()
