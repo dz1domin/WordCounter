@@ -1,7 +1,8 @@
 import argparse
 
 parser = argparse.ArgumentParser(description='Program for parsing files similar to linux word counter')
-parser.add_argument('file', type=argparse.FileType('r'), help='Name file to parse')
+parser.add_argument('file', type=argparse.FileType('r'), help='Enter filename including its extension, that you would '
+                                                              'like to use this program on(required argument)')
 
 parser.add_argument('-cl', '--COUNTLINES', help='Use this option to count all line in a given file',
                     action='store_true', dest='cl', default=False)
@@ -33,6 +34,7 @@ def countwords(isTrue, file):
         print(wordCount)
     else:
         pass
+
 
 def countchars(isTrue, file):
     charcount = 0
