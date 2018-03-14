@@ -1,15 +1,23 @@
 import argparse
 
 parser = argparse.ArgumentParser(description='Program for parsing files similar to linux word counter')
-parser.parse_args()
+parser.add_argument('file', nargs='?', type=argparse.FileType('r'), help='Name file to parse')
+parser.add_argument('-cl', '--COUNTLINES', help='Option to count lines in a given file')
+args = parser.parse_args()
+filename = args.file
 
 wordcount = 0
+linecount = 0
+scannedline = ''
 
-file = open('loremipsum.txt', 'r')
-for line in file:
-    newstring = line.split()
-    wordcount += len(newstring)
+if filename is not None:
+    for line in filename:
+        linecount += 1
+        wordcount += len(line.split())
+else:
+    print('No file given, use -h option to see proper syntax')
 
-print(wordcount)
 
-file.close()
+print('Number of lines:', linecount, " Number of words: ", wordcount)
+
+
