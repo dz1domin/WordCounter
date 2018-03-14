@@ -53,19 +53,6 @@ countlines(args.cl, args.file)
 countwords(args.cw, args.file)
 
 countchars(args.cc, args.file)
-#
-# wordcount = 0
-# linecount = 0
-# scannedline = ''
-#
-# if filename is not None:
-#     for line in filename:
-#         linecount += 1
-#         wordcount += len(line.split())
-# else:
-#     print('No file given, use -h option to see proper syntax')
-#
-#
-# print('Number of lines:', linecount, " Number of words: ", wordcount)
+
 
 
