@@ -14,47 +14,27 @@ parser.add_argument('-cc', '--COUNTCHARS', help='Use this option to count all al
                     action='store_true', dest='cc', default=False)
 
 
-def countlines(isTrue, file):
-    lineCount =0
-    if isTrue:
-        for line in file:
-            lineCount += 1
-        file.seek(0, 0)
-        print(lineCount)
-    else:
-        pass
-
-
-def countwords(isTrue, file):
-    wordCount = 0
-    if isTrue:
-        for line in file:
-            wordCount += len(line.split())
-        file.seek(0, 0)
-        print(wordCount)
-    else:
-        pass
-
-
-def countchars(isTrue, file):
+def count(cl, cw, cc, file):
+    linecount = 0
+    wordcount = 0
     charcount = 0
-    if isTrue:
-        for line in file:
+    for line in file:
+        if cl:
+            linecount += 1
+        if cw:
+            for singlestr in line.split():
+                wordcount += singlestr.isalpha()
+        if cc:
             for singlechar in line:
-                charcount += int(singlechar.isalpha())
-        file.seek(0, 0)
-        print(charcount)
-    else:
-        pass
+                charcount += singlechar.isalpha()
+    print('Line count: ', linecount)
+    print('Word count: ', wordcount)
+    print('Char count: ', charcount)
 
 
 args = parser.parse_args()
 
-countlines(args.cl, args.file)
-
-countwords(args.cw, args.file)
-
-countchars(args.cc, args.file)
+count(args.cl, args.cw, args.cc, args.file)
 
 
 
