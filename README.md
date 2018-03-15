@@ -25,3 +25,6 @@ Assuming you have python installed and WordCounter.py where you would like to us
       This option is used to specify a file on which you would like to use this program on.
 *   `-h` or `--help`
       This option lists above options and quick descriptions about each of them.
+
+**Note**: If the program is used on the standard input then end a stream an EoF sign needs to be entered
+(`crtl + D` on linux or `crtl + Z` on windows)
