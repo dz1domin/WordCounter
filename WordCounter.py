@@ -40,7 +40,9 @@ def count(cl, cw, cc, stream):
 
 args = parser.parse_args()
 
-count(args.cl, args.cw, args.cc, args.file)
-
+if args.cl or args.cw or args.cc:
+    count(args.cl, args.cw, args.cc, args.file)
+else:
+    print('No options chosen, use -h option to see the other options.')
 
 
