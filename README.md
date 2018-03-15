@@ -9,7 +9,7 @@ Next put the WordCounter.py file in a directory you would like to use it in.
 ## Usage
 Assuming you have python installed and WordCounter.py where you would like to use it, open the terminal
  on your computer no specific shell required. Next type
- `python3` or `python2`(on linux systems `python` on windows) and then `WordCounter.py` to run the program. So an example use would look something like this:
+ `python3` or `python2`on linux systems (`python` on windows) and then `WordCounter.py` to run the program. So an example use would look something like this:
  `python3 WordCounter.py -f examplefile.txt -cc -cw -cl`
  
  WordCounter allows you to use various options when using it, such as:
